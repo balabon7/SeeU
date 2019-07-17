@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040701E922DF26BB003774E4 /* OneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040701E822DF26BB003774E4 /* OneViewController.swift */; };
+		040701ED22DF26DD003774E4 /* TwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040701EC22DF26DD003774E4 /* TwoViewController.swift */; };
 		043A364122DDFC0200C931FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043A364022DDFC0200C931FA /* AppDelegate.swift */; };
-		043A364322DDFC0200C931FA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043A364222DDFC0200C931FA /* ViewController.swift */; };
+		043A364322DDFC0200C931FA /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043A364222DDFC0200C931FA /* StartViewController.swift */; };
 		043A364622DDFC0200C931FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 043A364422DDFC0200C931FA /* Main.storyboard */; };
 		043A364822DDFC0400C931FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 043A364722DDFC0400C931FA /* Assets.xcassets */; };
 		043A364B22DDFC0400C931FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 043A364922DDFC0400C931FA /* LaunchScreen.storyboard */; };
@@ -16,9 +18,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		040701E822DF26BB003774E4 /* OneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneViewController.swift; sourceTree = "<group>"; };
+		040701EC22DF26DD003774E4 /* TwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoViewController.swift; sourceTree = "<group>"; };
 		043A363D22DDFC0200C931FA /* iSeeYouAgainApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iSeeYouAgainApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		043A364022DDFC0200C931FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		043A364222DDFC0200C931FA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		043A364222DDFC0200C931FA /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		043A364522DDFC0200C931FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		043A364722DDFC0400C931FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		043A364A22DDFC0400C931FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -68,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				043A365622DDFDCC00C931FA /* myLogic.swift */,
+				040701E822DF26BB003774E4 /* OneViewController.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -85,7 +90,8 @@
 			isa = PBXGroup;
 			children = (
 				043A364022DDFC0200C931FA /* AppDelegate.swift */,
-				043A364222DDFC0200C931FA /* ViewController.swift */,
+				043A364222DDFC0200C931FA /* StartViewController.swift */,
+				040701EC22DF26DD003774E4 /* TwoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -170,8 +176,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				043A364322DDFC0200C931FA /* ViewController.swift in Sources */,
+				043A364322DDFC0200C931FA /* StartViewController.swift in Sources */,
 				043A365722DDFDCC00C931FA /* myLogic.swift in Sources */,
+				040701ED22DF26DD003774E4 /* TwoViewController.swift in Sources */,
+				040701E922DF26BB003774E4 /* OneViewController.swift in Sources */,
 				043A364122DDFC0200C931FA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,7 +336,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = GIR.iSeeYouAgainApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -346,7 +354,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = GIR.iSeeYouAgainApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
