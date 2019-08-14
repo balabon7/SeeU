@@ -30,14 +30,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         notificationCenter.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
             print("Ответ пользователя: \(granted)")
             
-            guard granted else{ return }  //если дали согласиет...
-            self.getNotificationSettings()
+            guard granted else{ return }  //если дали согласие...
+            self.getNotificationSetting()
         }
     }
     
-    func getNotificationSettings() { // отслеживает настройки уведомлений
+    func getNotificationSetting() { // отслеживает настройки уведомлений
         notificationCenter.getNotificationSettings { (settings) in
-          //  print("Настройки уведомдений: \(settings)")
+            //  print("Настройки уведомдений: \(settings)")
+            
         }
     }
     
@@ -48,7 +49,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         content.sound = .default
         content.badge = 1
         
-        // let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 20 , repeats: false)
         let date = date
         let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: true)
         

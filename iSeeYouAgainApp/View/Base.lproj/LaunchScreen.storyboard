@@ -17,7 +17,18 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch-Screen-See-u" translatesAutoresizingMaskIntoConstraints="NO" id="xca-Zh-YNa">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0022487076929999998" green="0.63547992710000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xca-Zh-YNa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Xth-Hp-dMQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xca-Zh-YNa" secondAttribute="bottom" id="lnI-zx-51q"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xca-Zh-YNa" secondAttribute="trailing" id="oUO-Pt-AjT"/>
+                            <constraint firstItem="xca-Zh-YNa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="yhT-WT-2Vb"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -26,4 +37,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="launch-Screen-See-u" width="616" height="1208.5"/>
+    </resources>
 </document>

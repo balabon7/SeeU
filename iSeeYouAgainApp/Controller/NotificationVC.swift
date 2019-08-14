@@ -12,32 +12,59 @@ class NotificationVC: UIViewController {
     
     private let appDelegate = UIApplication.shared.delegate as? AppDelegate
     
+    @IBOutlet var propertiesAllSwithcs: [UISwitch]!
+    
+    
     @IBOutlet weak var propertiesFirstSwithc: UISwitch!
     @IBOutlet weak var propertiesSecondSwithc: UISwitch!
     @IBOutlet weak var propertiesThirdSwithc: UISwitch!
     @IBOutlet weak var propertiesFourthSwithc: UISwitch!
     @IBOutlet weak var propertiesFifthSwithc: UISwitch!
     
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         propertiesFirstSwithc.isOn  = UserDefaults.standard.bool(forKey: "firstToggleValue")
         propertiesSecondSwithc.isOn = UserDefaults.standard.bool(forKey: "secondToggleValue")
         propertiesThirdSwithc.isOn  = UserDefaults.standard.bool(forKey: "thirdToggleValue")
-        propertiesFourthSwithc.isOn  = UserDefaults.standard.bool(forKey: "fourToggleValue")
+        propertiesFourthSwithc.isOn = UserDefaults.standard.bool(forKey: "fourToggleValue")
         propertiesFifthSwithc.isOn  = UserDefaults.standard.bool(forKey: "fifthToggleValue")
-
+        
     }
     
     private func alertDisplay(timeIndex: String, componentIndex: DateComponents, idIndex: String) {
-        let alert = UIAlertController(title: "Включено ежедневное напоминание", message: "Вы получите уведомлении в \(timeIndex)", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Ok", style: .default) { (action) in
-            self.appDelegate?.scheduleNotification(notificationType: "Уведомление пользователя", by: componentIndex, id: idIndex )
+        
+        self.appDelegate?.notificationCenter.getNotificationSettings { (settings) in
+            if settings.authorizationStatus == .authorized {
+                let alert = UIAlertController(title: "Включено ежедневное напоминание", message: "Вы получите уведомлении в \(timeIndex)", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
+                    self.appDelegate?.scheduleNotification(notificationType: "Уведомление пользователя", by: componentIndex, id: idIndex )
+                    
+                }
+                alert.addAction(okAction)
+                self.present(alert, animated: true, completion: nil)
+            } else {
+                self.notGrantedAccess()
+                for value in self.propertiesAllSwithcs {
+                    UserDefaults.standard.set(false, forKey: "firstToggleValue")
+                    UserDefaults.standard.set(false, forKey: "secondToggleValue")
+                    UserDefaults.standard.set(false, forKey: "thirdToggleValue")
+                    UserDefaults.standard.set(false, forKey: "fourToggleValue")
+                    UserDefaults.standard.set(false, forKey: "fifthToggleValue")
+                   value.isOn = false
+                }
+            }
+            
         }
-        alert.addAction(okAction)
-        present(alert, animated: true, completion: nil)
+    }
+    
+    func notGrantedAccess(){
+        let alertController = UIAlertController(title: "Установите допуск для отпавки уведомлений ", message: "Настройки > Уведомления > See u", preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(alertAction)
+        present(alertController, animated: true, completion: nil)
     }
     
     @IBAction func firstActivSwitch(_ sender: UISwitch) {
@@ -82,7 +109,7 @@ class NotificationVC: UIViewController {
     }
     
     @IBAction func fifthActivSwitch(_ sender: UISwitch) {
-      
+        
         if sender.isOn == true {
             UserDefaults.standard.set(true, forKey: "fifthToggleValue")
             alertDisplay(timeIndex: dateFive.timeToActive, componentIndex: dateFive.dateValue, idIndex: dateFive.id)
