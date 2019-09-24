@@ -443,7 +443,7 @@
                                 <rect key="frame" x="20" y="84" width="335" height="483"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" image="PalmsHydro" translatesAutoresizingMaskIntoConstraints="NO" id="sxG-0U-tK6">
-                                        <rect key="frame" x="7.5" y="0.0" width="320" height="462.50000000000006"/>
+                                        <rect key="frame" x="159.5" y="0.0" width="16" height="462.5"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="InformationTrainingLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YLb-G2-pMV">
                                         <rect key="frame" x="78.5" y="463.5" width="178.5" height="19.5"/>
